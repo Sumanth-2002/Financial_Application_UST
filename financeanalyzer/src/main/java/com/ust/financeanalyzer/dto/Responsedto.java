@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import reactor.core.publisher.Flux;
 
+import java.util.List;
+
 
 public class Responsedto {
     private  Projectdto projectdto;
-    private Flux<Employeedto> empdto;
+    private List<Employeedto> empdto;
 
     public Projectdto getProjectdto() {
         return projectdto;
@@ -20,15 +22,15 @@ public class Responsedto {
         this.projectdto = projectdto;
     }
 
-    public Flux<Employeedto> getEmpdto() {
+    public List<Employeedto> getEmpdto() {
         return empdto;
     }
 
-    public void setEmpdto(Flux<Employeedto> empdto) {
+    public void setEmpdto(List<Employeedto> empdto) {
         this.empdto = empdto;
     }
 
-    public Responsedto(Projectdto projectdto, Flux<Employeedto> empdto) {
+    public Responsedto(Projectdto projectdto, List<Employeedto> empdto) {
         this.projectdto = projectdto;
         this.empdto = empdto;
     }

@@ -1,31 +1,43 @@
 
 package com.ust.financeanalyzer.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "project")
 public class Project {
     @Id
-    private String projectid;
+    @JsonProperty("projectId")
+    private String projectId;
     private String projectname;
     private Double budget;
     private String budgetduration;
     private  int teamSize;
     public Project() {
     }
-    public Project(String projectid, String projectname, Double budget, String budgetduration,int teamSize) {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    public Project(String projectid, String projectname, String budget, String budgetduration,int teamSize) {
         this.projectid = projectid;
+=======
+    public Project(String projectId, String projectname, Double budget, String budgetduration,int teamSize) {
+        this.projectId = projectId;
+>>>>>>> Stashed changes
+=======
+    public Project(String projectId, String projectname, Double budget, String budgetduration,int teamSize) {
+        this.projectId = projectId;
+>>>>>>> Stashed changes
         this.projectname = projectname;
         this.budget = budget;
         this.budgetduration = budgetduration;
         this.teamSize=teamSize;
     }
     public String getProjectid() {
-        return projectid;
+        return projectId;
     }
     public void setProjectid(String projectid) {
-        this.projectid = projectid;
+        this.projectId = projectId;
     }
     public String getProjectname() {
         return projectname;

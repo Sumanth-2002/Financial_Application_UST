@@ -1,21 +1,24 @@
 package com.ust.financeanalyzer.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Employeedto {
     private String id;
     private String name;
     private String contact;
     private String email;
-    private String projectid;
+    @JsonProperty("projectId")
+    private String projectId;
     private Double salary;
     private Double tax;
 
-    public Employeedto(String id, String name, String contact, String email, String projectid, Double salary, Double tax) {
+    public Employeedto(String id, String name, String contact, String email, String projectId, Double salary, Double tax) {
         this.id = id;
         this.name = name;
         this.contact = contact;
         this.email = email;
-        this.projectid = projectid;
+        this.projectId = projectId;
         this.salary = salary;
         this.tax = tax;
     }
@@ -55,12 +58,12 @@ public class Employeedto {
         this.email = email;
     }
 
-    public String getProjectid() {
-        return projectid;
+    public String getProjectId() { // Correct method name
+        return projectId;
     }
 
-    public void setProjectid(String projectid) {
-        this.projectid = projectid;
+    public void setProjectId(String projectId) { // Correct method name
+        this.projectId = projectId;
     }
 
     public Double getSalary() {

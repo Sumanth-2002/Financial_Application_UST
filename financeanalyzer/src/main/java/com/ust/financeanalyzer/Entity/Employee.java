@@ -1,27 +1,29 @@
 
 package com.ust.financeanalyzer.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection = "employee")
 public class Employee {
-   @Id 
+   @Id
     private String id;
     private String name;
     private String contact;
     private String email;
-    private String projectid;
+    @JsonProperty("projectId")
+    private String projectId;
     private Double salary;
     public Employee() {
     }
-    public Employee(String id, String name, String contact, String email, String projectid, Double salary) {
+    public Employee(String id, String name, String contact, String email, String projectId, Double salary) {
         this.id = id;
         this.name = name;
         this.contact = contact;
         this.email = email;
-        this.projectid = projectid;
+        this.projectId = projectId;
         this.salary = salary;
     }
     public String getId() {
@@ -48,17 +50,19 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getProjectid() {
-        return projectid;
+    public String getProjectId() {
+        return projectId;
     }
-    public void setProjectid(String projectid) {
-        this.projectid = projectid;
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
+
     public Double getSalary() {
         return salary;
     }
     public void setSalary(Double salary) {
         this.salary = salary;
     }
-    
+
 }
